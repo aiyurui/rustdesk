@@ -811,11 +811,14 @@ pub fn is_modifier(evt: &KeyEvent) -> bool {
 }
 
 pub fn check_software_update() {
-    std::thread::spawn(move || allow_err!(check_software_update_()));
+    // 已注释掉更新检查功能
+    // std::thread::spawn(move || allow_err!(check_software_update_()));
 }
 
 #[tokio::main(flavor = "current_thread")]
 async fn check_software_update_() -> hbb_common::ResultType<()> {
+    // 已注释掉更新检查功能
+    /*
     let (request, url) =
         hbb_common::version_check_request(hbb_common::VER_TYPE_RUSTDESK_CLIENT.to_string());
     let latest_release_response = create_http_client_async()
@@ -840,6 +843,7 @@ async fn check_software_update_() -> hbb_common::ResultType<()> {
         }
         *SOFTWARE_UPDATE_URL.lock().unwrap() = response_url;
     }
+    */
     Ok(())
 }
 
